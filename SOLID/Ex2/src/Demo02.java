@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class Demo02 {
 
     public static void main(String[] args) {
 
@@ -11,8 +11,7 @@ public class Main {
         DiscountPolicy discountPolicy = new DefaultDiscountPolicy();
 
         //Create calculator
-        InvoiceCalculator calculator =
-                new InvoiceCalculator(taxPolicy, discountPolicy);
+        InvoiceCalculator calculator = new InvoiceCalculator(taxPolicy, discountPolicy);
 
         //Create printer
         InvoicePrinter printer = new InvoicePrinter();
@@ -21,8 +20,7 @@ public class Main {
         InvoiceRepository repository = new FileStore();
 
         //Inject into CafeteriaSystem
-        CafeteriaSystem sys =
-                new CafeteriaSystem(calculator, printer, repository);
+        CafeteriaSystem sys = new CafeteriaSystem(calculator, printer, repository);
 
         //Setup menu
         sys.addToMenu(new MenuItem("M1", "Veg Thali", 80.00));

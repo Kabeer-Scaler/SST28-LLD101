@@ -32,8 +32,7 @@ public class OnboardingService {
         String program = kv.getOrDefault("program", "");
 
         //Validate
-        List<String> errors =
-                validator.validate(name, email, phone, program);
+        List<String> errors = validator.validate(name, email, phone, program);
 
         if (!errors.isEmpty()) {
             printer.printErrors(errors);
@@ -44,8 +43,7 @@ public class OnboardingService {
         String id = IdUtil.nextStudentId(repo.count());
 
         //Create record
-        StudentRecord rec =
-                new StudentRecord(id, name, email, phone, program);
+        StudentRecord rec = new StudentRecord(id, name, email, phone, program);
 
         //Persist
         repo.save(rec);
